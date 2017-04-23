@@ -7,13 +7,27 @@
  * credit  : ghacksuserjs/ghacks-user.js (https://github.com/ghacksuserjs/ghacks-user.js/blob/master/user.js)
  * web     : Firefox/Gecko Configuration Guide for Privacy Freaks and Performance Buffs (http://12bytes.org/articles/tech/firefox-gecko-config-for-privacy-freaks-and-and-performance-buffs)
  * code    : https://github.com/atomGit/ghacks-user.js
- * version : 52r1 (based on Firefox v52 and ghacks user.js v52)
+ * version : 52r2 (based on Firefox v52 and ghacks user.js v52)
  * author  : 12bytes.org
  *
  * IMPORTANT: this user.js is a suppliment that is intended to be appended to the ghacksuserjs/ghacks-user.js user.js file (https://github.com/ghacksuserjs/ghacks-user.js/blob/master/user.js)
- * 
+ *
  * IMPORTANT: any changes to this file should be made in your custom preferences section at the end of this file between "BEGIN USER CUSTOMIZATIONS" and "END USER CUSTOMIZATIONS"
+ *
 */
+
+/*
+ * === 12BYTES.ORG LINUX SPECIFIC ===
+ *
+ * these settings are specific to Linux Mint, but should work with any Debian based distro which uses the APT (Advanced Package Tool) package manager - if you're not running a Debian-based distro, or not running Linux, comment these out
+*/
+
+user_pref("ghacks_user.js.parrot", "syntax error @ 12BYTES.ORG LINUX SPECIFIC");
+
+user_pref("network.protocol-handler.app.apt", "/usr/bin/apturl");       // path to APT URL handler
+user_pref("network.protocol-handler.app.apt+http", "/usr/bin/apturl");  // path to APT URL handler
+user_pref("network.protocol-handler.warn-external.apt", true);
+user_pref("network.protocol-handler.warn-external.apt+http", true);
 
 /*
  * === 12BYTES.ORG GHACKS DIFFS ===
@@ -30,12 +44,15 @@ user_pref("browser.urlbar.autoFill", true);                     // allow auto-co
 user_pref("browser.urlbar.autoFill.typed", true);               // allow auto-complete of text entered in the address bar
 user_pref("browser.urlbar.autocomplete.enabled", true);         // allow auto-complete of text entered in the address bar
 user_pref("browser.urlbar.maxRichResults", 10);                 // max number of search suggestions when searching in the address bar
+user_pref("browser.urlbar.suggest.bookmark", true);             // allow auto-complete of text entered in the address bar
 user_pref("browser.urlbar.suggest.history", true);              // allow auto-complete of text entered in the address bar
 user_pref("dom.event.clipboardevents.enabled", true);           // 'false' breaks TinyMCE editor paste (Ctrl+V) such as is used by WordPress, possibly others
 user_pref("dom.indexedDB.enabled", true);                       // as ghacks said, disabling this will break some sites
 // allow all default JS pop-up events
 user_pref("dom.popup_allowed_events", "change click dblclick mouseup notificationclick reset submit touchend");
 user_pref("dom.popup_maximum", 5);                              // allow a couple extra JS pop-ups just in case a site, such as a store/shopping cart, needs them
+user_pref("font.name.monospace.x-unicode", "Andale Mono");      // set this back to its default
+user_pref("font.name.monospace.x-western", "Andale Mono");      // set this back to its default
 user_pref("full-screen-api.enabled", true);                     // enable full-screen video capability
 user_pref("layout.css.visited_links_enabled", true);            // though it is a privacy trade-off, differentiating between visited and not visited links is important to me
 user_pref("layout.spellcheckDefault", 2);                       // enable spell-check for single line inputs
@@ -51,20 +68,7 @@ user_pref("privacy.clearOnShutdown.formdata", false);           // keep form dat
 user_pref("privacy.cpd.history", false);                        // don't select history item when clearing history manually
 user_pref("privacy.cpd.formdata", false);                       // don't select form data when clearing history manually
 user_pref("security.dialog_enable_delay", 700);                 // shorten the delay to enable buttons when prompted (like the 'ok' button when downloading a file)
-user_pref("ui.submenuDelay", 150);                              // set the delay time in which a sub-menu appears when hovering over a main menu item that has a sub-menu
-
-/*
- * === 12BYTES.ORG LINUX SPECIFIC ===
- *
- * these settings are specific to Linux Mint, but should work with any Debian based distro which uses the APT (Advanced Package Tool) package manager - if you're not running a Debian-based distro, or not running Linux, comment these out
-*/
-
-user_pref("ghacks_user.js.parrot", "syntax error @ 12BYTES.ORG LINUX SPECIFIC");
-
-user_pref("network.protocol-handler.app.apt", "/usr/bin/apturl");       // path to APT URL handler
-user_pref("network.protocol-handler.app.apt+http", "/usr/bin/apturl");  // path to APT URL handler
-user_pref("network.protocol-handler.warn-external.apt", true);
-user_pref("network.protocol-handler.warn-external.apt+http", true);
+user_pref("svg.disabled", false);                               // 'true' breaks YouTube player
 
 /*
  * === 12BYTES.ORG TABS ===
@@ -75,7 +79,6 @@ user_pref("network.protocol-handler.warn-external.apt+http", true);
 user_pref("ghacks_user.js.parrot", "syntax error @ 12BYTES.ORG TABS");
 
 user_pref("accessibility.tabfocus", 3);                         // 3: Tab key focuses text fields and all other form elements
-user_pref("browser.newtab.url", "");                            // "about:blank"=show a completely blank tab when opening new tabs
 user_pref("browser.link.open_newwindow", 1);                    // controls when a new window/tab should be opened - 1=open links that open in a new window in the current tab, 2=open links that open in a new window in a new window, 3=open links that open in a new window in a new tab in the current window
 user_pref("browser.link.open_newwindow.restriction", 0);        // controls when a new window/tab should be opened - 0=divert all links according to browser.link.open_newwindow, 1=do not divert any links, 2=divert all links according to browser.link.open_newwindow, unless the new window specifies how it should be displayed
 user_pref("browser.link.open_newwindow.override.external", 3);  // open links from external programs in: -1=default, 1=the current tab, 2=a new window, 3=a new tab
@@ -100,19 +103,19 @@ user_pref("browser.tabs.warnOnOpen", false);                    // disable warni
 
 user_pref("ghacks_user.js.parrot", "syntax error @ 12BYTES.ORG MISC");
 
-user_pref("accessibility.typeaheadfind", false);                    // whether to open the find bar to search for text as soon as you start typing
-user_pref("browser.feeds.showFirstRunUI", false);                   // don't show feed intro when first subscribing to a news feed
-user_pref("browser.fullscreen.animateUp", 0);                       // whether to animate window when entering full-screen view - 0=no toolbar/tab strip animation, 1=animates only first collapse, 2=qnimates each collapse
-user_pref("browser.startup.homepage", "http://12bytes.org/");       // page to display when clicking the Home button
-user_pref("browser.startup.page", 3);                               // page to display on startup - 1=home, 2=blank, 3=restore last session
-user_pref("browser.triple_click_selects_paragraph", false);         // whether to select paragraphs when triple clicked
-user_pref("full-screen-api.warning.delay", 0);                      // how long to display a warning ("YouTube is now Fullscreen") when a site enters full-screen mode - '0' disables the warning
-user_pref("general.autoScroll", false);                             // Whether to enable auto-scrolling (middle-click on a page to display scroll map)
-user_pref("layout.word_select.eat_space_to_next_word", false);      // whether to include spaces after a word when double clicking to select the word
-user_pref("layout.word_select.stop_at_punctuation", true);          // whether to stop selection at a punctuation when double clicking to select a word
-user_pref("mousewheel.with_shift.action", 0);                       // controls what happens when the Shift key is pressed and the mouse wheel is scrolled
-user_pref("nglayout.enable_drag_images", false);                    // whether images can be dragged - also seems to have an effect on highlighting and dragging text - this feature can be very annoying, especially for website editors/admins
-user_pref("devtools.toolbox.zoomValue", "1.3");                     // font size for the Developers Toolbox
+user_pref("accessibility.typeaheadfind", false);                            // whether to open the find bar to search for text as soon as you start typing
+user_pref("browser.feeds.showFirstRunUI", false);                           // don't show feed intro when first subscribing to a news feed
+user_pref("browser.fullscreen.animate", true);                              // whether to animate window when entering full-screen view
+user_pref("browser.startup.homepage", "http://12bytes.org/");               // page to display when clicking the Home button
+user_pref("browser.startup.page", 3);                                       // page to display on startup - 1=home, 2=blank, 3=restore last session
+user_pref("browser.triple_click_selects_paragraph", false);                 // whether to select paragraphs when triple clicked
+user_pref("full-screen-api.warning.delay", 0);                              // how long to display a warning ("YouTube is now Fullscreen") when a site enters full-screen mode - '0' disables the warning
+user_pref("general.autoScroll", false);                                     // Whether to enable auto-scrolling (middle-click on a page to display scroll map)
+user_pref("layout.word_select.eat_space_to_next_word", false);              // whether to include spaces after a word when double clicking to select the word
+user_pref("layout.word_select.stop_at_punctuation", true);                  // whether to stop selection at a punctuation when double clicking to select a word
+user_pref("mousewheel.with_shift.action", 0);                               // controls what happens when the Shift key is pressed and the mouse wheel is scrolled
+user_pref("nglayout.enable_drag_images", false);                            // whether images can be dragged - also seems to have an effect on highlighting and dragging text - this feature can be very annoying, especially for website editors/admins
+user_pref("devtools.toolbox.zoomValue", "1.3");                             // font size for the Developers Toolbox
 
 /*
  * === 12BYTES.ORG SMOOTH SCROLLING ===
