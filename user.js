@@ -7,7 +7,7 @@
  * credit  : ghacksuserjs/ghacks-user.js (https://github.com/ghacksuserjs/ghacks-user.js/blob/master/user.js)
  * web     : Firefox/Gecko Configuration Guide for Privacy Freaks and Performance Buffs (http://12bytes.org/articles/tech/firefox-gecko-config-for-privacy-freaks-and-and-performance-buffs)
  * code    : https://github.com/atomGit/ghacks-user.js
- * version : 52r2 (based on Firefox v52 and ghacks user.js v52)
+ * version : 53r1 (based on Firefox v53)
  * author  : 12bytes.org
  *
  * IMPORTANT: this user.js is a suppliment that is intended to be appended to the ghacksuserjs/ghacks-user.js user.js file (https://github.com/ghacksuserjs/ghacks-user.js/blob/master/user.js)
@@ -56,12 +56,6 @@ user_pref("font.name.monospace.x-western", "Andale Mono");      // set this back
 user_pref("full-screen-api.enabled", true);                     // enable full-screen video capability
 user_pref("layout.css.visited_links_enabled", true);            // though it is a privacy trade-off, differentiating between visited and not visited links is important to me
 user_pref("layout.spellcheckDefault", 2);                       // enable spell-check for single line inputs
-user_pref("media.autoplay.enabled", true);                      // 'false' causes some videos to not play at all even after clicking the 'start' button, including 1st and 3rd party Vimeo videos, and may also necessitate having to click the play button twice in other instances
-user_pref("media.ogg.enabled", true);                           // enable all media types
-user_pref("media.ogg.flac.enabled", true);                      // ^
-user_pref("media.opus.enabled", true);                          // ^
-user_pref("media.raw.enabled", true);                           // ^
-user_pref("media.wave.enabled", true);                          // ^
 user_pref("network.cookie.cookieBehavior", 1);                  // allow all 1st party cookies by default and control them with uMatrix
 user_pref("privacy.clearOnShutdown.history", false);            // keep history on shutdown
 user_pref("privacy.clearOnShutdown.formdata", false);           // keep form data on sgutdown
@@ -73,29 +67,17 @@ user_pref("svg.disabled", false);                               // 'true' breaks
 /*
  * === 12BYTES.ORG TABS ===
  *
- * my personal settings for tabs - some are different from ghacks settings and some are duplicates just because i like having them all in one section
+ * my personal settings for tabs
 */
 
 user_pref("ghacks_user.js.parrot", "syntax error @ 12BYTES.ORG TABS");
 
 user_pref("accessibility.tabfocus", 3);                         // 3: Tab key focuses text fields and all other form elements
 user_pref("browser.link.open_newwindow", 1);                    // controls when a new window/tab should be opened - 1=open links that open in a new window in the current tab, 2=open links that open in a new window in a new window, 3=open links that open in a new window in a new tab in the current window
-user_pref("browser.link.open_newwindow.restriction", 0);        // controls when a new window/tab should be opened - 0=divert all links according to browser.link.open_newwindow, 1=do not divert any links, 2=divert all links according to browser.link.open_newwindow, unless the new window specifies how it should be displayed
 user_pref("browser.link.open_newwindow.override.external", 3);  // open links from external programs in: -1=default, 1=the current tab, 2=a new window, 3=a new tab
-user_pref("browser.newtab.preload", false);                     // whether to preload new tab content - dependent upon browser.newtab.url
-//user_pref("browser.newtabpage.directory.ping", "");
-//user_pref("browser.newtabpage.directory.source", "data:text/plain,{}");
-user_pref("browser.newtabpage.enabled", false);                 // don't use the default Firefox new tab page
-user_pref("browser.newtabpage.enhanced", false);                // whether to display marketing junk on new tabs - dependent upon browser.newtab.url
-user_pref("browser.newtabpage.introShown", true);               // remove this annoyance
 user_pref("browser.sessionhistory.max_entries", 5);             // tab specific max number of pages that can be traversed when moving forward/backward in history - affects total memory consumption
-user_pref("browser.tabs.closeWindowWithLastTab", false);        // whether to exit FF when closing last tab
 user_pref("browser.tabs.loadDivertedInBackground", true);       // cause links opened from external programs to open in a new background tab
 user_pref("browser.tabs.loadInBackground", false);              // focus new tabs instead of loading them in the background
-user_pref("browser.tabs.selectOwnerOnClose", true);             // focus the parent tab when a child tab is closed
-user_pref("browser.tabs.warnOnClose", false);                   // disable warning when closing multiple tabs
-user_pref("browser.tabs.warnOnCloseOtherTabs", false);          // disable warning when closing other tabs
-user_pref("browser.tabs.warnOnOpen", false);                    // disable warning when opening too many tabs
 
 /*
  * === 12BYTES.ORG MISC ===
