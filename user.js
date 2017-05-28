@@ -7,7 +7,7 @@
  * credit  : ghacksuserjs/ghacks-user.js (https://github.com/ghacksuserjs/ghacks-user.js/blob/master/user.js)
  * web     : Firefox/Gecko Configuration Guide for Privacy Freaks and Performance Buffs (http://12bytes.org/articles/tech/firefox-gecko-config-for-privacy-freaks-and-and-performance-buffs)
  * code    : https://github.com/atomGit/ghacks-user.js
- * version : 53r1 (based on Firefox v53)
+ * version : 53r2 (based on Firefox v53)
  * author  : 12bytes.org
  *
  * IMPORTANT: this user.js is a suppliment that is intended to be appended to the ghacksuserjs/ghacks-user.js user.js file (https://github.com/ghacksuserjs/ghacks-user.js/blob/master/user.js)
@@ -63,6 +63,7 @@ user_pref("privacy.cpd.history", false);                        // don't select 
 user_pref("privacy.cpd.formdata", false);                       // don't select form data when clearing history manually
 user_pref("security.dialog_enable_delay", 700);                 // shorten the delay to enable buttons when prompted (like the 'ok' button when downloading a file)
 user_pref("svg.disabled", false);                               // 'true' breaks YouTube player
+user_pref("ui.use_standins_for_native_colors", false);          // 'true' makes tool-tips unreadable in my case with the default theme on Linux
 
 /*
  * === 12BYTES.ORG TABS ===
