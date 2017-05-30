@@ -64,6 +64,7 @@ user_pref("privacy.cpd.formdata", false);                       // don't select 
 user_pref("security.dialog_enable_delay", 700);                 // shorten the delay to enable buttons when prompted (like the 'ok' button when downloading a file)
 user_pref("svg.disabled", false);                               // 'true' breaks YouTube player
 user_pref("ui.use_standins_for_native_colors", false);          // 'true' makes tool-tips unreadable in my case with the default theme on Linux
+user_pref("webgl.disabled", false);                             // 'true will break some sites - WenGL appears to be dependant upon JS being enabled (which should be disabled globally by default) so if you trust a site enough to enable JS, you may as well enable WebGL as well since the security risks with WebGL appear to be far less of a problem than JS
 
 /*
  * === 12BYTES.ORG TABS ===
