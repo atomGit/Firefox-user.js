@@ -3,12 +3,12 @@
  * BEGIN 12BYTES.ORG CUSTOMIZATIONS
  * ================================
  *
- * name    : 12bytes.org atomGit/ghacks-user.js
- * credit  : ghacksuserjs/ghacks-user.js (https://github.com/ghacksuserjs/ghacks-user.js/blob/master/user.js)
- * web     : Firefox/Gecko Configuration Guide for Privacy Freaks and Performance Buffs (http://12bytes.org/articles/tech/firefox-gecko-config-for-privacy-freaks-and-and-performance-buffs)
- * code    : https://github.com/atomGit/ghacks-user.js
- * version : 53r3 (based on Firefox v53)
- * author  : 12bytes.org
+ * name     : 12bytes.org atomGit/ghacks-user.js
+ * credit   : ghacksuserjs/ghacks-user.js (https://github.com/ghacksuserjs/ghacks-user.js/blob/master/user.js)
+ * web      : Firefox/Gecko Configuration Guide for Privacy Freaks and Performance Buffs (http://12bytes.org/articles/tech/firefox-gecko-config-for-privacy-freaks-and-and-performance-buffs)
+ * code     : https://github.com/atomGit/ghacks-user.js
+ * version  : 54r2 (based on Firefox v54)
+ * author   : 12bytes.org
  *
  * IMPORTANT: this user.js is a suppliment that is intended to be appended to the ghacksuserjs/ghacks-user.js user.js file (https://github.com/ghacksuserjs/ghacks-user.js/blob/master/user.js)
  *
@@ -48,20 +48,22 @@ user_pref("browser.urlbar.suggest.bookmark", true);             // allow auto-co
 user_pref("browser.urlbar.suggest.history", true);              // allow auto-complete of text entered in the address bar
 user_pref("dom.event.clipboardevents.enabled", true);           // 'false' breaks TinyMCE editor paste (Ctrl+V) such as is used by WordPress, possibly others
 user_pref("dom.indexedDB.enabled", true);                       // as ghacks said, disabling this will break some sites
-// allow all default JS pop-up events
-user_pref("dom.popup_allowed_events", "change click dblclick mouseup notificationclick reset submit touchend");
+user_pref("dom.popup_allowed_events", "change click dblclick mouseup notificationclick reset submit touchend");  // allow all default JS pop-up events
 user_pref("dom.popup_maximum", 5);                              // allow a couple extra JS pop-ups just in case a site, such as a store/shopping cart, needs them
 user_pref("font.name.monospace.x-unicode", "Andale Mono");      // set this back to its default
 user_pref("font.name.monospace.x-western", "Andale Mono");      // set this back to its default
 user_pref("full-screen-api.enabled", true);                     // enable full-screen video capability
 user_pref("layout.css.visited_links_enabled", true);            // though it is a privacy trade-off, differentiating between visited and not visited links is important to me
 user_pref("layout.spellcheckDefault", 2);                       // enable spell-check for single line inputs
+user_pref("media.autoplay.enabled", true);                      // 'false' breaks Vimeo video playback, possibly others
 user_pref("network.cookie.cookieBehavior", 1);                  // allow all 1st party cookies by default and control them with uMatrix
 user_pref("privacy.clearOnShutdown.history", false);            // keep history on shutdown
-user_pref("privacy.clearOnShutdown.formdata", false);           // keep form data on sgutdown
-user_pref("privacy.cpd.history", false);                        // don't select history item when clearing history manually
+user_pref("privacy.clearOnShutdown.formdata", false);           // keep form data on shutdown
 user_pref("privacy.cpd.formdata", false);                       // don't select form data when clearing history manually
+user_pref("privacy.cpd.history", false);                        // don't select history item when clearing history manually
 user_pref("security.dialog_enable_delay", 700);                 // shorten the delay to enable buttons when prompted (like the 'ok' button when downloading a file)
+user_pref("security.tls.version.min", 1);                       // in my case a value of "2" breaks cPanel login
+user_pref("security.OCSP.enabled", 0);                          // disable on-line security check for SSL certificates (can cause sites to load slower or not at all if the service is down - you should typically NOT disable this)
 user_pref("svg.disabled", false);                               // 'true' breaks YouTube player
 user_pref("ui.use_standins_for_native_colors", false);          // 'true' makes tool-tips unreadable in my case with the default theme on Linux
 user_pref("webgl.disabled", false);                             // 'true will break some sites - WenGL appears to be dependant upon JS being enabled (which should be disabled globally by default) so if you trust a site enough to enable JS, you may as well enable WebGL as well since the security risks with WebGL appear to be far less of a problem than JS
@@ -100,6 +102,7 @@ user_pref("layout.word_select.stop_at_punctuation", true);                  // w
 user_pref("mousewheel.with_shift.action", 0);                               // controls what happens when the Shift key is pressed and the mouse wheel is scrolled
 user_pref("nglayout.enable_drag_images", false);                            // whether images can be dragged - also seems to have an effect on highlighting and dragging text - this feature can be very annoying, especially for website editors/admins
 user_pref("devtools.toolbox.zoomValue", "1.3");                             // font size for the Developers Toolbox
+user_pref("layout.css.devPixelsPerPx", "1.3");                              // global UI zoom level - this affects toolbars, icons, web pages, etc.
 
 /*
  * === 12BYTES.ORG SMOOTH SCROLLING ===
