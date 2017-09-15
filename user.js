@@ -7,7 +7,7 @@
  * credit   : ghacksuserjs/ghacks-user.js (https://github.com/ghacksuserjs/ghacks-user.js/blob/master/user.js)
  * web      : Firefox/Gecko Configuration Guide for Privacy Freaks and Performance Buffs (http://12bytes.org/articles/tech/firefox-gecko-config-for-privacy-freaks-and-and-performance-buffs)
  * code     : https://github.com/atomGit/ghacks-user.js
- * version  : 54r2 (based on Firefox v54)
+ * version  : 54r3 (based on Firefox v54)
  * author   : 12bytes.org
  *
  * IMPORTANT: this user.js is a suppliment that is intended to be appended to the ghacksuserjs/ghacks-user.js user.js file (https://github.com/ghacksuserjs/ghacks-user.js/blob/master/user.js)
