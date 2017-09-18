@@ -7,7 +7,7 @@
  * credit   : ghacksuserjs/ghacks-user.js (https://github.com/ghacksuserjs/ghacks-user.js/blob/master/user.js)
  * web      : Firefox/Gecko Configuration Guide for Privacy Freaks and Performance Buffs (http://12bytes.org/articles/tech/firefox-gecko-config-for-privacy-freaks-and-and-performance-buffs)
  * code     : https://github.com/atomGit/ghacks-user.js
- * version  : 54r3 (based on Firefox v54)
+ * version  : 54r4 (based on Firefox v54)
  * author   : 12bytes.org
  *
  * IMPORTANT: this user.js is a suppliment that is intended to be appended to the ghacksuserjs/ghacks-user.js user.js file (https://github.com/ghacksuserjs/ghacks-user.js/blob/master/user.js)
@@ -50,6 +50,7 @@ user_pref("dom.event.clipboardevents.enabled", true);           // `false' break
 user_pref("dom.indexedDB.enabled", true);                       // as ghacks said, disabling this will break some sites
 user_pref("dom.popup_allowed_events", "change click dblclick mouseup notificationclick reset submit touchend");  // allow all default JS pop-up events
 user_pref("dom.popup_maximum", 5);                              // allow a couple extra JS pop-ups just in case a site, such as a store/shopping cart, needs them
+user_pref("extensions.systemAddon.update.url", "");             // disallow updates for system add-ons
 user_pref("font.name.monospace.x-unicode", "Andale Mono");      // set this back to its default
 user_pref("font.name.monospace.x-western", "Andale Mono");      // set this back to its default
 user_pref("full-screen-api.enabled", true);                     // enable full-screen video capability
